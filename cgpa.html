@@ -1,0 +1,397 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Calculate your CGPA online with Apexian's fast and easy CGPA Calculator. Perfect for students to compute GPA with grades and credit hours." />
+  <meta name="keywords" content="CGPA Calculator, GPA Calculator, Online CGPA, University CGPA, Grade Calculator, Apexian" />
+  <meta name="author" content="Apexian Team" />
+
+  <meta property="og:title" content="Apexian | CGPA Calculator" />
+  <meta property="og:description" content="Easily calculate your CGPA with Apexian's user-friendly CGPA calculator. Supports grades and credit hours." />
+  <meta property="og:image" content="https://yourdomain.com/preview-image.png" />
+  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta property="og:type" content="website" />
+  <!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js"></script>
+
+<script>
+  // Your Firebase config
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  // Initialize Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+</script>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="apexion logo final.png" type="image/x-icon" />
+  <script src="https://kit.fontawesome.com/ab3d1d7fbd.js" crossorigin="anonymous"></script>
+
+  <title>Apexian | CGPA Calculator</title>
+</head>
+
+  <body>
+    <div class="cgpa_calculator_main_container_bg_verstile">
+      <div class="left_container">
+        <div class="logo_container">
+          <div class="testonomial">
+            <div class="Apexian_name"><p>Apexian Solutions</p></div>
+            <div class="Title_logo"><p>CGPA Calculator</p></div>
+          </div>
+        </div>
+        <div class="Home_con">
+          <a href="index.html"><i class="fa-solid fa-house-user"></i>&nbsp; HOME</a>
+        </div>
+        <div class="school_con">
+          <a href=""> <i class="fa-solid fa-school"></i>&nbsp; SCHOOL</a>
+        </div>
+        <div class="University_title"><p>University...</p></div>
+        <div class="University_container_main_type_verstile">
+          <a href="https://nust.edu.pk/">NUST</a>
+          <a href="https://www.nu.edu.pk/">FAST</a>
+          <a href="https://lums.edu.pk/">LUMS</a>
+          <a href="https://gcu.edu.pk/">GCU</a>
+          <a href="https://ucp.edu.pk/">UCP</a>
+          <a href="https://giki.edu.pk/">GIQ</a>
+          <a href="https://www.comsats.edu.pk/">COMSATS</a>
+        </div>
+        <div class="Polytechnics_con">
+          <p>Polytechnics...</p>
+        </div>
+        <div class="Polytechnics_container_main_type_verstile">
+          <a href="">SP</a>
+          <a href="">NP</a>
+          <a href="">TP</a>
+          <a href="">NYP</a>
+          <a href="">RP</a>
+        </div>
+        <div class="ITEColleges_University_title">
+          <p>ITE Colleges...</p>
+        </div>
+        <div class="ITEColleges_container_main_type_verstile">
+          <a href="">SP</a>
+          <a href="">NP</a>
+          <a href="">TP</a>
+          <a href="">NYP</a>
+          <a href="">RP</a>
+        </div>
+        <div class="Resources_University_title">
+          <p>Resources...</p>
+        </div>
+        <div class="Resources_tags">
+          <div class="contact">
+            <a href=""><i class="fa-solid fa-envelope"></i> CONTACT US</a>
+          </div>
+          <div class="policy">
+            <a href=""
+              ><i class="fa-solid fa-fingerprint"></i> Privacy Policy</a
+            >
+          </div>
+          <div class="about">
+            <a href=""><i class="fa-solid fa-exclamation"></i> ABOUT US</a>
+          </div>
+          <div class="about">
+            <a href="blog.html">Blogs</a>
+          </div>
+        </div>
+      </div>
+      <div class="right_container">
+        <div class="right_apexian_title">
+          <p>Apexian Solutions</p>
+          <p>CGPA Calculator</p>
+        </div>
+        <hr />
+        <div class="main_gpa_title_con_bg_ver">
+          <p>GPA Calculator - CGPA Projection & GPA Target</p>
+        </div>
+        <div class="main_gpa_title_con_bg_ver_2">
+          <p>
+            Plan your academic success with our simple 4 step GPA calculator
+          </p>
+        </div>
+        <hr />
+        <div class="Selection_school_gpa">
+          <label for="schoolInput" class="step-label"
+            >Step 1: Select Your University</label
+          >
+          <input
+            list="schoolList"
+            id="schoolInput"
+            name="school"
+            placeholder="Search for your University..."
+            class="styled-input"
+          />
+
+          <datalist id="schoolList">
+            <option value="UCP"></option>
+            <option value="NUST"></option>
+            <option value="LUMS"></option>
+            <option value="GCU"></option>
+            <option value="FAST"></option>
+            <option value="COMSATS"></option>
+            <option value="UET Lahore"></option>
+            <option value="UET Peshawar"></option>
+            <option value="UET Taxila"></option>
+            <option value="University of Karachi"></option>
+            <option value="IBA Karachi"></option>
+            <option value="SZABIST"></option>
+            <option value="Bahria University"></option>
+            <option value="Air University"></option>
+            <option value="Riphah International University"></option>
+            <option value="University of the Punjab"></option>
+            <option value="University of Sargodha"></option>
+            <option value="University of Faisalabad"></option>
+            <option value="Islamia University Bahawalpur"></option>
+            <option value="Arid Agriculture University Rawalpindi"></option>
+            <option value="Allama Iqbal Open University (AIOU)"></option>
+            <option value="University of Balochistan"></option>
+            <option value="Quaid-i-Azam University"></option>
+            <option value="International Islamic University Islamabad"></option>
+            <option value="GIKI (Ghulam Ishaq Khan Institute)"></option>
+            <option value="HITEC University"></option>
+            <option value="Institute of Space Technology (IST)"></option>
+            <option
+              value="NFC Institute of Engineering and Fertilizer Research"
+            ></option>
+            <option value="National Textile University (NTU)"></option>
+            <option value="University of Gujrat"></option>
+            <option value="Abasyn University"></option>
+            <option
+              value="Capital University of Science and Technology (CUST)"
+            ></option>
+            <option value="National College of Arts (NCA)"></option>
+            <option value="Forman Christian College (FCC)"></option>
+            <option
+              value="Pak-Austria Fachhochschule Institute Haripur"
+            ></option>
+          </datalist>
+        </div>
+
+        <div class="cuurent_inf0_con_ver_bg">
+          <div class="first_info">
+            <label for="gpainput" class="gpainput"
+              >Step 2: Enter Your Current Information</label
+            >
+            <input
+              list="gpainputList"
+              id="gpainput"
+              name="gpainput"
+              placeholder="e.g.,3.50..."
+              class="gpainput"
+            />
+
+            <datalist id="gpainputList">
+              <option value="2.0"></option>
+              <option value="3.2"></option>
+              <option value="3.3"></option>
+              <option value="2.5"></option>
+              <option value="4.0"></option>
+            </datalist>
+          </div>
+          <div class="total_credits_section">
+            <label for="creditsinput" class="creditsinput">
+              Total Credits Completed
+            </label>
+            <input
+              list="creditsList"
+              id="creditsinput"
+              name="creditsinput"
+              placeholder="e.g., 120"
+              class="creditsinput"
+            />
+
+            <datalist id="creditsList">
+              <option value="100"></option>
+              <option value="110"></option>
+              <option value="120"></option>
+              <option value="130"></option>
+              <option value="140"></option>
+            </datalist>
+          </div>
+        </div>
+        <div class="step_3">
+              <label for="schoolInput" class="step-label"
+            >Step 3: Enter Your Grades...</label
+          >
+        </div>
+        <div class="grade-table">
+          <div class="table-header">
+            <span>Enter Grades</span>
+            <span>Credit Hours</span>
+            <span>Clear</span>
+          </div>
+
+          <!-- Repeat this row as needed -->
+          <div class="table-row">
+            <select class="dropdown">
+              <option>Select</option>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+              <option>D</option>
+              <option>F</option>
+            </select>
+
+            <select class="dropdown">
+              <option>Select</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+
+            <button class="clear-btn">Clear</button>
+          </div>
+          <div class="table-row">
+            <select class="dropdown">
+              <option>Select</option>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+              <option>D</option>
+              <option>F</option>
+            </select>
+
+            <select class="dropdown">
+              <option>Select</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+
+            <button class="clear-btn">Clear</button>
+          </div>
+          <div class="table-row">
+            <select class="dropdown">
+              <option>Select</option>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+              <option>D</option>
+              <option>F</option>
+            </select>
+
+            <select class="dropdown">
+              <option>Select</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+
+            <button class="clear-btn">Clear</button>
+          </div>
+          <div class="table-row">
+            <select class="dropdown">
+              <option>Select</option>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+              <option>D</option>
+              <option>F</option>
+            </select>
+
+            <select class="dropdown">
+              <option>Select</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+
+            <button class="clear-btn">Clear</button>
+          </div>
+          <div class="table-row">
+            <select class="dropdown">
+              <option>Select</option>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+              <option>D</option>
+              <option>F</option>
+            </select>
+
+            <select class="dropdown">
+              <option>Select</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+
+            <button class="clear-btn">Clear</button>
+          </div>
+          <div class="table-row">
+            <select class="dropdown">
+              <option>Select</option>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+              <option>D</option>
+              <option>F</option>
+            </select>
+
+            <select class="dropdown">
+              <option>Select</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+
+            <button class="clear-btn">Clear</button>
+          </div>
+          <div class="table-row">
+            <select class="dropdown">
+              <option>Select</option>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+              <option>D</option>
+              <option>F</option>
+            </select>
+
+            <select class="dropdown">
+              <option>Select</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+
+            <button class="clear-btn">Clear</button>
+          </div>
+        </div>
+        <div class="Addbtn">
+            <button class="clear-btn">ADD</button>
+        </div>
+        <div class="cal_button">
+            <a href="">Calculate</a>
+        </div>
+        <div class="result"> 
+          <p></p>
+        </div>
+        <div class="copyright-container">
+  <h2>© 2025 Apexian CGPA Calculator</h2>
+  <p>
+    All rights reserved. No part of this website or its content may be copied,
+    reproduced, distributed, or transmitted in any form or by any means,
+    without the prior written permission of Apexian.
+  </p>
+  <small>Designed &amp; Developed by Apexian Team</small>
+</div>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
